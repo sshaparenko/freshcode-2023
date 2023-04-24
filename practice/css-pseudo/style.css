@@ -1,0 +1,19 @@
+.nav-list {
+  margin-top: 40px;
+}
+
+.list-item {
+  display: inline-block;
+}
+
+.link {
+  text-decoration: none;
+  display: inline-block;
+  padding: 20px;
+  background-color: dodgerblue;
+  color: white;
+}
+
+.link:hover {
+  background-color: lightblue;
+}
