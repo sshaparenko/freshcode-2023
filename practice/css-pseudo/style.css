@@ -25,11 +25,16 @@
   padding: 20px;
   background-color: dodgerblue;
   color: white;
-  border: none;
+  border: 3px solid transparent;
   line-height: 1;
   font-size: inherit;
 }
 
-.link:hover:not(button) {
+.link:hover:not(button),
+.link:focus {
   background-color: lightblue;
+}
+
+.link:focus {
+  outline: none;
 }
