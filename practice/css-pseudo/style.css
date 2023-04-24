@@ -29,6 +29,15 @@
   line-height: 1;
   font-size: inherit;
 }
+/* link + visited + hover + active */
+.link:link {
+  /* set the bg for link, that has not wisited yet */
+  background-color: aqua;
+}
+
+.link:visited {
+  color: aqua;
+}
 
 .link:hover:not(button),
 .link:focus {
@@ -37,4 +46,9 @@
 
 .link:focus {
   outline: none;
+}
+
+.link:active {
+  /* active should be after hover */
+  color: #ff0000;
 }
