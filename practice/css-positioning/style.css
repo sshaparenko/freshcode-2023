@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  height: 200vh;
+}
+
+.container {
+  background-color: dodgerblue;
+}
+
+.box {
+  width: 50px;
+  padding: 30px;
+  background-color: lightblue;
+  text-align: center;
+  position: fixed;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
