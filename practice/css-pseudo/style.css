@@ -25,8 +25,11 @@
   padding: 20px;
   background-color: dodgerblue;
   color: white;
+  border: none;
+  line-height: 1;
+  font-size: inherit;
 }
 
-.link:hover {
+.link:hover:not(button) {
   background-color: lightblue;
 }
