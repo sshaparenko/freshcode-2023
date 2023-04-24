@@ -1,0 +1,31 @@
+[title] {
+  color: red;
+}
+h1.test {
+  font-weight: bold;
+  font-size: 26px;
+}
+.text-1.text-2 {
+  /* Selector Specificity */
+}
+p#some-id.some-class {
+  /* Selector Specificity */
+}
+div#root > p {
+  color: limegreen;
+}
+div#root > div > p {
+  color: red;
+}
+div p {
+  /* all p of div */
+  text-decoration: underline;
+}
+ul ~ p {
+  /* after ul on the same level */
+  font-weight: bold;
+}
+ul + p {
+  /* first after ul on the same level */
+  font-size: 40px;
+}
