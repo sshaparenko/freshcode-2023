@@ -1,3 +1,16 @@
+* {
+  /* seletor for each elements */
+}
+
+:root {
+  /* find the root element (<html>) */
+  /* set the base styling for web page */
+  /* here you should set the css variables */
+  font-size: 20px;
+  font-family: sans-serif;
+  --base-color: #ff0000;
+}
+
 .nav-list {
   margin-top: 40px;
 }
