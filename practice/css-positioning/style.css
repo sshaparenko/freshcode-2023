@@ -1,3 +1,35 @@
+/* 
+  position: RELATIVE
+
+  In relative positioning, original place
+  of the element will be reserved
+---------------------------------
+  position: ABSOLUTE
+  
+  depends on viewport or on the
+  closest parent with position relative
+
+  <div relative>
+    <div absolute>Depends on parent</div>
+  </div>
+
+  if height and width of element is not set,
+  if you set the top, right, bottom, left to 0,
+  element will take all the space of parent element
+---------------------------------
+  position: FIXED -> depends on viewport
+
+  With fixed position, the element will be fixed 
+  on the display. The original place will not be saved.
+
+  left, right, bottom, left 
+  will be set according to the viewpot, 
+  not the parent element
+---------------------------------
+  position: STIKY -> relative + fixed
+---------------------------------
+  z-index -> set the priority of the element
+  */
 body {
   margin: 0;
   height: 200vh;
