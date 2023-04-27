@@ -1,0 +1,25 @@
+::selection {
+  background-color: greenyellow;
+}
+
+p::first-letter {
+  color: red;
+  font-style: italic;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+p::first-line {
+  font-weight: 700;
+}
+
+.article-heading::before {
+  content: '<<<<<<<<<<<';
+  width: 50px;
+  height: 30px;
+}
+.article-heading::after {
+  content: '>>>>>>>>>>>';
+  width: 50px;
+  height: 30px;
+}
