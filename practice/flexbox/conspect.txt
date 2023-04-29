@@ -14,6 +14,11 @@ Parent flex:
     2.6 space-around -> space between elements is x2 bigger than space
       between first element and its parent
     2.7 space-evenly -> space between elements are equal
-
+  3. align-items
+    3.1 stretch (default) -> stretch items 
+    3.2 flex-start -> according to oy axis
+    3.3 flex-end -> according to oy axis
+    3.4 center
+    3.5 baseline -> center items by the first line of content
 
 Child flex:
