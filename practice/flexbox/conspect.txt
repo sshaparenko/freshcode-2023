@@ -1,0 +1,19 @@
+display: flex -> enable flexbox
+
+Parent flex:
+  1. flex-direction -> main direction of ox
+    1.1 row
+    1.2 column
+    1.3 row-inverse
+    1.4 column-inverse
+  2. justify-content -> main direction of oy
+    2.1 flex-start (default)
+    2.3 flex-end
+    2.4 center
+    2.5 space-between
+    2.6 space-around -> space between elements is x2 bigger than space
+      between first element and its parent
+    2.7 space-evenly -> space between elements are equal
+
+
+Child flex:
