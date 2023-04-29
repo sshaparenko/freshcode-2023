@@ -1,0 +1,29 @@
+.face {
+  margin: 40vh auto;
+  width: 500px;
+  height: 500px;
+  background-color: black;
+
+  border-radius: 50%;
+
+  position: relative;
+}
+
+.ear {
+  width: 400px;
+  height: 400px;
+  background-color: black;
+  position: absolute;
+
+  border-radius: 50%;
+}
+
+.left {
+  bottom: 60%;
+  right: 70%;
+}
+
+.right {
+  bottom: 60%;
+  left: 70%;
+}
