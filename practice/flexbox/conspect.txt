@@ -34,4 +34,5 @@ Parent flex:
     2.7 stretch
   6. flex-flow -> flex-direction + flex-wrap
   7. gap -> distance between eleemnts
+      gap(x) / gap(x,y)
 Child flex:

@@ -13,7 +13,7 @@
   align-items: flex-start;
   align-content: stretch;
 
-  gap: 10px;
+  gap: 10px 20px;
 }
 
 .item {
