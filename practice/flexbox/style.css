@@ -4,12 +4,13 @@
   background-color: orange;
   /* margin: 0 auto; */
   display: flex;
-  flex-direction: row;
+
+  /* flex-wrap: wrap; 
+  flex-direction: row;*/
+  flex-flow: row wrap;
+
   justify-content: flex-start;
-
   align-items: flex-start;
-
-  flex-wrap: wrap;
   align-content: stretch;
 }
 

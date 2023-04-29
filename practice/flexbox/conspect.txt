@@ -32,4 +32,5 @@ Parent flex:
     2.5 space-around
     2.6 space-evenly
     2.7 stretch
+  6. flex-flow -> flex-direction + flex-wrap
 Child flex:
