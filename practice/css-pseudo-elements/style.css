@@ -64,7 +64,7 @@ p::first-line {
   font-size: medium;
   list-style: none;
   display: inline-block;
-  padding: 15px;
+  position: relative;
   
   transition-property: background-color;
   transition-duration: 0.1s;
@@ -73,8 +73,10 @@ p::first-line {
 }
 
 .list-item-link {
+  display: block;
   text-decoration: none;
   color: white;
+  padding: 15px;
 
   transition-property: color;
   transition-duration: 0.2s;
@@ -88,4 +90,21 @@ p::first-line {
 
 .list-item-link:hover {
   color: rgb(74, 138, 116);
+}
+
+.list-item::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: black;
+
+  position: absolute;
+  bottom: 0;
+
+  transition: width 0.3s ease-in;
+}
+
+.list-item:hover::before {
+  width: 100%;
 }
