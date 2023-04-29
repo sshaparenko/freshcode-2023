@@ -20,5 +20,16 @@ Parent flex:
     3.3 flex-end -> according to oy axis
     3.4 center
     3.5 baseline -> center items by the first line of content
-
+  4. flex-wrap -> 
+    4.1 row
+    4.2 wrap
+    4.3 wrap-revers -> reverses the oy axis
+  5. align-content -> only with wrap / wrap-reverse
+    2.1 flex-start (default)
+    2.2 flex-end
+    2.3 center
+    2.4 space-between
+    2.5 space-around
+    2.6 space-evenly
+    2.7 stretch
 Child flex:
