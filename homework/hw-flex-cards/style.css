@@ -1,0 +1,81 @@
+
+
+.container {
+  background-color: rgb(54, 54, 54);
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  flex-wrap: wrap;
+  gap: 1em;
+
+  font-family: 'Roboto', sans-serif;
+}
+
+.card {
+  font-weight: 400;
+  font-size: 19px;
+  color: #fff;
+
+  min-width: 300px;
+  padding: 40px;
+  border-radius: 9px;
+
+  display: flex;
+  justify-content: space-between;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before, .card::after {
+  content: '';
+  width: 200px;
+  height: 200px;
+  display: block;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+.card::before {
+  right: -18px;
+  bottom: -100px;
+}
+
+.card::after {
+  right: -90px;
+  top: -50px;
+}
+
+.card h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.card img {
+  height: 30px;
+  width: 30px;
+}
+
+.card p {
+  margin-top: 40px;
+}
+
+.card h2 {
+  margin-top: 20px;
+}
+
+.sales {
+  background-image: linear-gradient(to right, #ffe59f, #ff9a9a, #ff9a9a);
+}
+
+.orders {
+  background-image: linear-gradient(to right, #adcfe6, #6f8dee, #6f8dee);
+}
+
+.online {
+  background-image: linear-gradient(to right, #b2f0e7, #54c9b0, #54c9b0);
+}
