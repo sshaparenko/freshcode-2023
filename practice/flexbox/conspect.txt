@@ -57,9 +57,10 @@ width/height < flex-basis < content
     95.45 + 185.71 *1 = 280.167px will be the new size of element with flex-grow = 1
 
 
-  5. flex-shrink
+  5. flex-shrink as flex-grow but inverse
     flex-shrink = 1 (default)
-  6. flex
+
+  6. flex: x, y, z => flex-grow flex-shrink flex-basis
 
 Auto Margin on flex item will push item on all able space
 
