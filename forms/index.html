@@ -9,8 +9,18 @@
   <title>Forms</title>
 </head>
 <body>
-  <form method="post" class="form">
-
+  <h1>Forms</h1>
+  <!-- method -> for HTTP method -->
+  <form method="get" class="form">
+    <!-- for in label is for pointing to input with id -->
+    <label for="login-id">Login</label>
+    <!-- id for label
+        name for back-end
+    -->
+    <input id="login-id" name="login" placeholder="Login" type="text"/>
+    <label for="Password-id">Password</label>
+    <input id="password-id" name="password" placeholder="Password" type="password"/>
+    <button type="submit">Submit</button>
   </form>
 </body>
 </html>
