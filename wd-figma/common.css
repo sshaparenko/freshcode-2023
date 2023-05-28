@@ -1,0 +1,17 @@
+body {
+  --blue-accent: #34547A;
+  --grey-accent: #EEEFF1;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.button {
+  background-color: var(--blue-accent);
+  color: #ffff;
+
+  display: block;
+  min-width: 225px;
+  padding: 25px 41px;
+  border: 0;
+}

@@ -1,0 +1,118 @@
+@import url(./common.css);
+
+body {
+  background-color: var(--grey-accent);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  margin: 10px auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.nav-list-item {
+  display: inline;
+  padding: 0 8px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.info p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 8px;
+  text-align: justify;
+}
+
+.laptop {
+  width: 16em;
+}
+
+@media (min-width: 360px) {
+  .logo-img {
+    width: 42px;
+    height: 16px;
+  }
+
+  .nav-list-item {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 576px) { 
+  
+}
+
+@media (min-width: 768px) {
+  .header-info {
+    flex-direction: row;
+  }
+
+  .info {
+    gap: 1em;
+  }
+
+  .nav{
+    margin-bottom: 100px;
+  }
+
+  .laptop {
+    width: 20em;
+  }
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: 10px auto;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .nav-list-item {
+    display: inline;
+    padding: 0 8px;
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
