@@ -93,6 +93,7 @@ class Worker {
     return this.daySalary * this._workDays;
   }
 }
+
 try {
   const worker = new Worker('Alex', 'Brown', 40, 30);
   //calling setter
