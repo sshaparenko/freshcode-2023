@@ -1,0 +1,54 @@
+* {
+  /* seletor for each elements */
+}
+
+:root {
+  /* find the root element (<html>) */
+  /* set the base styling for web page */
+  /* here you should set the css variables */
+  font-size: 20px;
+  font-family: sans-serif;
+  --base-color: #ff0000;
+}
+
+.nav-list {
+  margin-top: 40px;
+}
+
+.list-item {
+  display: inline-block;
+}
+
+.link {
+  text-decoration: none;
+  display: inline-block;
+  padding: 20px;
+  background-color: dodgerblue;
+  color: white;
+  border: 3px solid transparent;
+  line-height: 1;
+  font-size: inherit;
+}
+/* link + visited + hover + active */
+.link:link {
+  /* set the bg for link, that has not wisited yet */
+  background-color: aqua;
+}
+
+.link:visited {
+  color: aqua;
+}
+
+.link:hover:not(button),
+.link:focus {
+  background-color: lightblue;
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:active {
+  /* active should be after hover */
+  color: #ff0000;
+}
