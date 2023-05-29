@@ -69,10 +69,38 @@ class Worker {
     this.workDays = workDays;
   }
 
+  /**
+   * getters and setters are created before constructor
+   */
+  get workDays() {
+    return this._workDays;
+  }
+
+  set workDays(days) {
+
+    if(typeof days !== 'number' || isNaN(days)) {
+      throw new TypeError('Days must be number');
+    }
+
+    if(days < 0) {
+      throw new RangeError('worked days can\'t be negative');
+    }
+
+    this._workDays = days;
+  }
+
   getSalary() {
-    return this.daySalary * this.workDays;
+    return this.daySalary * this._workDays;
   }
 }
+try {
+  const worker = new Worker('Alex', 'Brown', 40, 30);
+  //calling setter
+  worker.workDays = 10;
+  console.log(worker.getSalary());
+  //calling getter
+  console.log(worker.workDays);
+} catch(error) {
+  console.log(error);
+}
 
-const worker = new Worker('Alex', 'Brown', 40, 30);
-console.log(worker.getSalary());
