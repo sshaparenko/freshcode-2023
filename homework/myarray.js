@@ -1,9 +1,16 @@
 class MyArray {
   #length;
-  constructor() {
+  constructor(...elements) {
     this.#length = 0;
+    this.push(...elements);
   }
 
+  /*
+    - loop through method arguments;
+    - at each iteration create new property 
+    and set the value;
+    - return length.
+  */
   push(...elements) {
     for(let el of elements) {
       this[this.#length] = el;
@@ -12,17 +19,27 @@ class MyArray {
     return this.#length;
   }
 
+  /*
+    - write values of object into tempArr var
+    - set length to 0
+    - push method arguments first
+    and old values after that
+  */
+
   unshift(...elements) {
     let tempArr = Object.values(this);
     this.#length = 0;
-    for(let el of elements) {
-      this[this.#length] = el;
-      this.#length++;
-    }
-    this.push(...tempArr);
+    this.push(...elements, ...tempArr);
     return this.#length;
   }
 
+  /*
+    - write values of object into tempArr var
+    - save first element
+    - remove first element and rewrite tempArr
+    - push new arr of values
+    - delete last property   
+  */
   shift() {
     let tempArr = Object.values(this);
     let firstEl = tempArr[0];
@@ -33,6 +50,11 @@ class MyArray {
     return firstEl;
   }
 
+  /*
+    - check the argument type
+    - write values of object into values var
+    - loop through the values and execute callback function
+  */
   forEach(callbackFn) {
     if(typeof callbackFn !== 'function') throw TypeError('There should be a function!');
     let values = Object.values(this);
@@ -41,13 +63,22 @@ class MyArray {
     }
   }
 
+  /*
+    - write values of object into tempArr var
+    - create new instance of MyArray as result variable
+    - loop through the properties of MyArray object
+    and execute the callback function
+      - in case of console.log() be a callbackFn =>
+      the return value will be undefined and we
+      just execute the function itself
+      - in case if the type of the returned value is not
+      undefined => the callbackFn will modify the element
+  */
   map(callbackFn) {
 
     let tempArr = Object.values(this);
-    let result = new MyArray();
+    let result = new MyArray(...tempArr);
     let i = 0;
-
-    result.push(...tempArr);
     
     for(let el of tempArr) {
       if(typeof callbackFn(el) === 'undefined') {
@@ -57,9 +88,10 @@ class MyArray {
         i++;
       }
     }
-
     return result;
   }
+
+  static isMyArray = (obj) => obj instanceof MyArray;
 }
 
 class Counter {
@@ -80,12 +112,12 @@ const arr = [];
 const myArray = new MyArray();
 
 console.log(myArray.push(5, 6, 20, true));
-// console.log(myArray);
+console.log(myArray);
 
-// console.log(myArray.unshift(0));
-// // console.log(myArray);
+console.log(myArray.unshift(1, 2, 3));
+console.log(myArray);
 
-// console.log(myArray.shift())
+console.log(myArray.shift())
 // console.log(myArray);
 // console.log(myArray.shift())
 // console.log(myArray);
@@ -106,3 +138,4 @@ console.log(newArr);
 console.log(myArray);
 
 [1, 2, 4].map(el => console.log(el));
+console.log(MyArray.isMyArray(myArray));
