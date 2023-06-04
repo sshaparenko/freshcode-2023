@@ -26,7 +26,10 @@ class Car {
   }
 
   set currentSpeed(speed) {
-    if(typeof speed !== 'number') throw TypeError('speed should be a number');
+    if(typeof speed !== 'number' || isNaN(speed)){
+      throw TypeError('speed should be a number');
+    }
+    
     if(typeof this._currentSpeed !== 'undefined') {
       const temp = this._currentSpeed + speed;
       if(temp < 0 || speed > this.maxSpeed) throw RangeError('current speed cannot be less then 0 or grater then your max speed');
