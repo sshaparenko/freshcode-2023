@@ -25,7 +25,6 @@ class MyArray {
     - push method arguments first
     and old values after that
   */
-
   unshift(...elements) {
     let tempArr = Object.values(this);
     this.#length = 0;
@@ -92,6 +91,17 @@ class MyArray {
   }
 
   static isMyArray = (obj) => obj instanceof MyArray;
+
+  reverse() {
+    let count = this.#length-1;
+    for(let i = 0; i < (this.#length / 2); i++) {
+      let temp = this[i];
+      this[i] = this[count];
+      this[count] = temp;
+      count--;
+    }
+    return this;
+  }
 }
 
 class Counter {
@@ -111,7 +121,7 @@ class Counter {
 const arr = [];
 const myArray = new MyArray();
 
-console.log(myArray.push(5, 6, 20, true));
+console.log(myArray.push(5, 6, 20, true, 7));
 console.log(myArray);
 
 console.log(myArray.unshift(1, 2, 3));
@@ -139,3 +149,6 @@ console.log(myArray);
 
 [1, 2, 4].map(el => console.log(el));
 console.log(MyArray.isMyArray(myArray));
+
+const reversed = myArray.reverse();
+console.log(reversed);
