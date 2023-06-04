@@ -10,6 +10,7 @@ class MyArray {
     - at each iteration create new property 
     and set the value;
     - return length.
+    - time complexity O(n)
   */
   push(...elements) {
     for(let el of elements) {
@@ -24,6 +25,7 @@ class MyArray {
     - set length to 0
     - push method arguments first
     and old values after that
+    - time complexity O(n + k)
   */
   unshift(...elements) {
     let tempArr = Object.values(this);
@@ -37,7 +39,8 @@ class MyArray {
     - save first element
     - remove first element and rewrite tempArr
     - push new arr of values
-    - delete last property   
+    - delete last property  
+    - time complexity O(n) 
   */
   shift() {
     let tempArr = Object.values(this);
@@ -53,6 +56,7 @@ class MyArray {
     - check the argument type
     - write values of object into values var
     - loop through the values and execute callback function
+    - time complexity O(n)
   */
   forEach(callbackFn) {
     if(typeof callbackFn !== 'function') throw TypeError('There should be a function!');
@@ -72,6 +76,7 @@ class MyArray {
       just execute the function itself
       - in case if the type of the returned value is not
       undefined => the callbackFn will modify the element
+    - time complexity O(n)
   */
   map(callbackFn) {
 
