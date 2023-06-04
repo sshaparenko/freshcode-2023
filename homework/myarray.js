@@ -79,6 +79,7 @@ class MyArray {
     - time complexity O(n)
   */
   map(callbackFn) {
+    if(typeof callbackFn !== 'function') throw TypeError('There should be a function!');
 
     let tempArr = Object.values(this);
     let result = new MyArray(...tempArr);
