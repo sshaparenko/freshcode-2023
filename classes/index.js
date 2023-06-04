@@ -41,12 +41,23 @@ class User {
   #firstName;
   #lastName;
   #age;
-  constructor(login, password, firstName, lastName, age) {
+  #banned;
+  constructor(login, password, firstName, lastName, age, banned) {
     this.#login = login;
     this.#password = password;
     this.#firstName = firstName;
     this.#lastName = lastName;
     this.#age = age;
+    this.#banned = banned;
+  }
+
+  get banned() {
+    return this.#banned;
+  }
+
+  set banned(status) {
+    if(typeof status !== 'boolean') return TypeError('Invalid type');
+    this.#banned = status;
   }
 
   get firstName() {
@@ -79,11 +90,20 @@ class User {
   }
 
   isAdult = () => this.#age >=18;
+  
   getFullName = () => `${this.firstName} ${this.lastName}`;
+  
+  //static method to check the type of an object
+  static isUser = (obj) => {
+    return obj instanceof User;
+  }
 }
 
 const user1 = new User('alex', '123', 'Alex', 'Brown', 10);
 const user2 = new User('marry', '123', 'Marry', 'Brown', 20);
+
+console.log(User.isUser(user1));
+
 
 console.log(user1.firstName);
 console.log(user1.lastName);
@@ -99,6 +119,41 @@ console.log(user1.fullName);
 
 // console.log(user1.getFullName());
 // console.log(user2.getFullName());
+
+class Moderator extends User {
+  #permission;
+  constructor(login, password, firstName, lastName, age, banned, permission) {
+    super(login, password, firstName, lastName, age, banned);
+    this.#permission = permission;
+  }
+
+  get permission() {
+    return this.#permission;
+  }
+}
+
+class Admin extends Moderator {
+  constructor(login, password, firstName, lastName, age, banned, permission) {
+    super(login, password, firstName, lastName, age, banned, permission);
+  }
+
+  banUser(obj) {
+    if(obj instanceof User) {
+      obj.banned = true;
+      console.log(`user was banned successfully!`);
+    } else {
+      console.log('Your object is not of type User!');
+    }
+    
+  }
+}
+
+// const moderator = new Moderator('test', 'test', 'test', 'test', 18, 'permission');
+// console.log(moderator.permission);
+const user = new User('test', 'test', 'test', 'test', 18, false);
+const admin = new Admin('test', 'test', 'test', 'test', 18, 'permission');
+admin.banUser(user);
+console.log(user.banned);
 
 /**
  * Worker
