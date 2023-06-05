@@ -13,7 +13,7 @@ class MyArray {
     - time complexity O(n)
   */
   push(...elements) {
-    for(let el of elements) {
+    for (let el of elements) {
       this[this.#length] = el;
       this.#length++;
     }
@@ -45,7 +45,7 @@ class MyArray {
   shift() {
     let tempArr = Object.values(this);
     let firstEl = tempArr[0];
-    [,...tempArr] = tempArr;
+    [, ...tempArr] = tempArr;
     this.#length = 0;
     this.push(...tempArr);
     delete this[this.#length];
@@ -59,11 +59,11 @@ class MyArray {
     - time complexity O(n)
   */
   forEach(callbackFn) {
-    if(typeof callbackFn !== 'function') 
+    if (typeof callbackFn !== "function")
       throw TypeError(`Error: ${typeof callbackFn} is not a function`);
-    
+
     let values = Object.values(this);
-    for(let el of values) {
+    for (let el of values) {
       callbackFn(el);
     }
   }
@@ -81,17 +81,18 @@ class MyArray {
     - time complexity O(n)
   */
   map(callbackFn) {
-    if(typeof callbackFn !== 'function') 
+    if (typeof callbackFn !== "function")
       throw TypeError(`Error: ${typeof callbackFn} is not a function`);
 
     let tempArr = Object.values(this);
     let result = new MyArray(...tempArr);
     let i = 0;
-    
-    for(let el of tempArr) {
-      if(typeof callbackFn(el) === 'undefined') {
+    if (typeof callbackFn(tempArr[0]) === "undefined") {
+      for (let el of tempArr) {
         callbackFn(el);
-      } else {
+      }
+    } else {
+      for (let el of tempArr) {
         result[i] = callbackFn(el);
         i++;
       }
@@ -106,8 +107,8 @@ class MyArray {
     time complexity O(n)
   */
   reverse() {
-    let count = this.#length-1;
-    for(let i = 0; i < (this.#length / 2); i++) {
+    let count = this.#length - 1;
+    for (let i = 0; i < this.#length / 2; i++) {
       let temp = this[i];
       this[i] = this[count];
       this[count] = temp;
@@ -126,13 +127,13 @@ class MyArray {
     - time complexity O(n)
   */
   filter(callbackFn) {
-    if(typeof callbackFn !== 'function') 
+    if (typeof callbackFn !== "function")
       throw TypeError(`Error: ${typeof callbackFn} is not a function`);
 
     let tempArr = Object.values(this);
     let result = new MyArray();
-    for(let element of tempArr) {
-      if(callbackFn(element)) {
+    for (let element of tempArr) {
+      if (callbackFn(element)) {
         result.push(element);
       }
     }
@@ -142,30 +143,30 @@ class MyArray {
 
 const myArray = new MyArray();
 
-console.log('--------- push() method test ---------');
+console.log("--------- push() method test ---------");
 console.log(myArray.push(5, 6, 20, true, 7));
 console.log(myArray);
 
-console.log('--------- unshift() method test ---------');
-console.log(myArray.unshift(1, 2, 3, 'test'));
+console.log("--------- unshift() method test ---------");
+console.log(myArray.unshift(1, 2, 3, "test"));
 console.log(myArray);
 
-console.log('--------- shift() method test ---------');
+console.log("--------- shift() method test ---------");
 console.log(myArray.shift());
 
-console.log('--------- map() method test ---------');
-const newArr = myArray.map(x => x*2);
+console.log("--------- map() method test ---------");
+const newArr = myArray.map((x) => x * 2);
 console.log(newArr);
 console.log(myArray);
 
-console.log('--------- isMyArray() method test ---------');
+console.log("--------- isMyArray() method test ---------");
 console.log(MyArray.isMyArray(myArray));
 
-console.log('--------- reverse() method test ---------');
+console.log("--------- reverse() method test ---------");
 const reversed = myArray.reverse();
 console.log(reversed);
 
-console.log('--------- filter() method test ---------');
+console.log("--------- filter() method test ---------");
 console.log(myArray);
-const myFilter = myArray.filter(el => el > 4);
+const myFilter = myArray.filter((el) => el > 4);
 console.log(myFilter);
