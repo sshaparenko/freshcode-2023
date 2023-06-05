@@ -167,5 +167,5 @@ console.log(reversed);
 
 console.log('--------- filter() method test ---------');
 console.log(myArray);
-const myFilter = myArray.filter(el => console.log(el));
+const myFilter = myArray.filter(el => el > 4);
 console.log(myFilter);
