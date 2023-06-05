@@ -27,3 +27,9 @@ const {
 
 //access through newUnit
 console.log(newUnit); 
+
+let a = 'value a';
+let b = 'value b';
+
+[a, b] = [b, a];
+console.log(a);
