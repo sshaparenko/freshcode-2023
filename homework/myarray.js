@@ -45,7 +45,7 @@ class MyArray {
   shift() {
     let tempArr = Object.values(this);
     let firstEl = tempArr[0];
-    [, ...tempArr] = tempArr;
+    [, ...tempArr];
     this.#length = 0;
     this.push(...tempArr);
     delete this[this.#length];
