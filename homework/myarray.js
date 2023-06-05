@@ -109,9 +109,7 @@ class MyArray {
   reverse() {
     let count = this.#length - 1;
     for (let i = 0; i < this.#length / 2; i++) {
-      let temp = this[i];
-      this[i] = this[count];
-      this[count] = temp;
+      [this[i], this[count]] = [this[count], this[i]];
       count--;
     }
     return this;
