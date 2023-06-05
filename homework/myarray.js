@@ -59,7 +59,9 @@ class MyArray {
     - time complexity O(n)
   */
   forEach(callbackFn) {
-    if(typeof callbackFn !== 'function') throw TypeError('There should be a function!');
+    if(typeof callbackFn !== 'function') 
+      throw TypeError(`Error: ${typeof callbackFn} is not a function`);
+    
     let values = Object.values(this);
     for(let el of values) {
       callbackFn(el);
@@ -79,7 +81,8 @@ class MyArray {
     - time complexity O(n)
   */
   map(callbackFn) {
-    if(typeof callbackFn !== 'function') throw TypeError('There should be a function!');
+    if(typeof callbackFn !== 'function') 
+      throw TypeError(`Error: ${typeof callbackFn} is not a function`);
 
     let tempArr = Object.values(this);
     let result = new MyArray(...tempArr);
@@ -98,6 +101,10 @@ class MyArray {
 
   static isMyArray = (obj) => obj instanceof MyArray;
 
+  /*
+    loop through the array till its half and swap elements
+    time complexity O(n)
+  */
   reverse() {
     let count = this.#length-1;
     for(let i = 0; i < (this.#length / 2); i++) {
@@ -108,53 +115,57 @@ class MyArray {
     }
     return this;
   }
+
+  /*
+    - check the type of method argument
+    - write values of current array object into tempArr
+    - create new instance of MyArray
+    - loop through the elements in tempArr
+    if the callbackFn true => push element into the new MyArray
+    - return the new instance with values added (or without)
+    - time complexity O(n)
+  */
+  filter(callbackFn) {
+    if(typeof callbackFn !== 'function') 
+      throw TypeError(`Error: ${typeof callbackFn} is not a function`);
+
+    let tempArr = Object.values(this);
+    let result = new MyArray();
+    for(let element of tempArr) {
+      if(callbackFn(element)) {
+        result.push(element);
+      }
+    }
+    return result;
+  }
 }
 
-class Counter {
-  constructor() {
-    this.sum = 0;
-    this.count = 0;
-  }
-
-  add(array) {
-    array.forEach(el => {
-      this.sum += el;
-      ++this.count;
-    });
-  }
-}
-
-const arr = [];
 const myArray = new MyArray();
 
+console.log('--------- push() method test ---------');
 console.log(myArray.push(5, 6, 20, true, 7));
 console.log(myArray);
 
-console.log(myArray.unshift(1, 2, 3));
+console.log('--------- unshift() method test ---------');
+console.log(myArray.unshift(1, 2, 3, 'test'));
 console.log(myArray);
 
-console.log(myArray.shift())
-// console.log(myArray);
-// console.log(myArray.shift())
-// console.log(myArray);
-// console.log(myArray.shift())
-// console.log(myArray);
-// console.log(myArray.shift())
-// console.log(myArray);
-// console.log(myArray.shift())
-console.log(myArray);
+console.log('--------- shift() method test ---------');
+console.log(myArray.shift());
 
-myArray.forEach(el => console.log(el));
-let counter = new Counter();
-counter.add(myArray);
-console.log(counter);
-
+console.log('--------- map() method test ---------');
 const newArr = myArray.map(x => x*2);
 console.log(newArr);
 console.log(myArray);
 
-[1, 2, 4].map(el => console.log(el));
+console.log('--------- isMyArray() method test ---------');
 console.log(MyArray.isMyArray(myArray));
 
+console.log('--------- reverse() method test ---------');
 const reversed = myArray.reverse();
 console.log(reversed);
+
+console.log('--------- filter() method test ---------');
+console.log(myArray);
+const myFilter = myArray.filter(el => console.log(el));
+console.log(myFilter);
