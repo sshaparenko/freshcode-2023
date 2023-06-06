@@ -28,3 +28,13 @@ set.add(5);
 set.add(6);
 
 console.log(set);
+
+const names1 = ['Alex', 'Tomas', 'John'];
+const names2 = ['Tomas', 'Bob', 'Alex'];
+const result = [];
+
+const set1 = new Set([...names1, ...names2]);
+set1.forEach(el => result.push(el));
+
+console.log(set1);
+console.log(result);
