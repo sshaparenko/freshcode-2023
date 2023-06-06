@@ -20,6 +20,7 @@ console.log(map);
 
 
 //task 1
+//get unique values
 const dictionary = new Map();
 dictionary.set('', '');
 
@@ -31,10 +32,7 @@ console.log(set);
 
 const names1 = ['Alex', 'Tomas', 'John'];
 const names2 = ['Tomas', 'Bob', 'Alex'];
-const result = [];
 
-const set1 = new Set([...names1, ...names2]);
-set1.forEach(el => result.push(el));
+const result = [...new Set([...names1, ...names2])];
 
-console.log(set1);
 console.log(result);
