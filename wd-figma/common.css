@@ -15,3 +15,13 @@ body {
   padding: 25px 41px;
   border: 0;
 }
+
+h1 {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 16px;
+}
