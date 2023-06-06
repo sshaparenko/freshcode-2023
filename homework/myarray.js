@@ -43,6 +43,10 @@ class MyArray {
     - time complexity O(n) 
   */
   shift() {
+    if(this.#length === 0) {
+      return 'undefined';
+    }
+    
     let tempArr = Object.values(this);
     let firstEl = tempArr[0];
     [, ...tempArr];
@@ -168,3 +172,7 @@ console.log("--------- filter() method test ---------");
 console.log(myArray);
 const myFilter = myArray.filter((el) => el > 4);
 console.log(myFilter);
+
+const thisArr = new MyArray();
+console.log(thisArr.shift());
+
