@@ -17,3 +17,14 @@ console.log(map);
 map.clear();
 
 console.log(map);
+
+
+//task 1
+const dictionary = new Map();
+dictionary.set('', '');
+
+const set = new Set();
+set.add(5);
+set.add(6);
+
+console.log(set);
