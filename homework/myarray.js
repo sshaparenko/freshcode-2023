@@ -35,6 +35,7 @@ class MyArray {
   }
 
   /*
+    - check the length of the array
     - write values of object into tempArr var
     - save first element
     - remove first element and rewrite tempArr
